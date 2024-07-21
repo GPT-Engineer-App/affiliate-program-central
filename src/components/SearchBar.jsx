@@ -6,7 +6,7 @@ const SearchBar = ({ searchTerm, setSearchTerm, handleSearch }) => {
     <form onSubmit={handleSearch} className="flex gap-2 mb-8">
       <Input
         type="text"
-        placeholder="Search programs..."
+        placeholder="Search affiliate programs..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className="flex-grow"

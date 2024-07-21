@@ -1,6 +1,11 @@
 import { useState } from "react";
 import ProgramList from "@/components/ProgramList";
 import SearchBar from "@/components/SearchBar";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,14 +25,23 @@ const Index = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Affiliate Program Discovery</h1>
-      <SearchBar
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        handleSearch={handleSearch}
-      />
-      <ProgramList programs={programs} />
+    <div className="flex flex-col min-h-screen">
+      <Hero />
+      <main className="flex-grow">
+        <Features />
+        <div className="container mx-auto px-4 py-8">
+          <h2 className="text-3xl font-bold mb-8">Discover Affiliate Programs</h2>
+          <SearchBar
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleSearch={handleSearch}
+          />
+          <ProgramList programs={programs} />
+        </div>
+        <Testimonials />
+        <Pricing />
+      </main>
+      <Footer />
     </div>
   );
 };
